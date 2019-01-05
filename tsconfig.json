@@ -25,6 +25,7 @@
     "scripts",
     "acceptance-tests",
     "webpack",
+    "config",
     "jest",
     "src/setupTests.ts"
   ]
