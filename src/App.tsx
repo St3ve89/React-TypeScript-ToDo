@@ -1,18 +1,33 @@
 import * as React from 'react';
-
-import logo from './logo.svg';
+import Todos from './components/Todos';
+import './App.scss';
 
 class App extends React.Component {
+  public state =  {
+    todos: [
+      {
+        id: 1,
+        title: 'Take out the trash',
+        completed: false
+      },
+      {
+        id: 2,
+        title: 'dinner with wife',
+        completed: false
+      },
+      {
+        id: 3,
+        title: 'Meeting with boss',
+        completed: false
+      }
+    ]
+  };
+  
   public render() {
+    console.log(this.state.todos)
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.tsx</code> and save to reload.
-        </p>
+        <Todos todos={this.state.todos}/>
       </div>
     );
   }
