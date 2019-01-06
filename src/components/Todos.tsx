@@ -1,17 +1,14 @@
 import * as React from 'react';
-
+import TodoItem from './TodoItem'
 interface IAppProps {
   todos: any
 }
 
 class Todos extends React.Component<IAppProps> {
   public render() {
-    console.log(this.props.todos)
-    return (
-      <div>
-        <h1>Todos</h1>
-      </div>
-    );
+    return this.props.todos.map( (todo: any) => {
+        <TodoItem key={todo.id} todo={todo} />
+      })
   }
 }
 
